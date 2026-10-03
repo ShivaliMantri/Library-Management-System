@@ -1,0 +1,918 @@
+/* =====================================
+   BASIC SETTINGS
+===================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background-color: #000;
+
+    color: white;
+
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+
+    width: 240px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    background-color: #050505;
+
+    border-right: 1px solid #222;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #2196f3;
+
+    margin-bottom: 45px;
+
+}
+
+
+/* Navigation */
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.sidebar nav a {
+
+    text-decoration: none;
+
+    color: white;
+
+    padding: 13px 15px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+.sidebar nav a:hover,
+
+.sidebar nav a.active {
+
+    background-color: #2196f3;
+
+    color: white;
+
+}
+
+
+/* Sidebar Bottom */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+    border-top: 1px solid #222;
+
+    padding-top: 20px;
+
+}
+
+
+.sidebar-bottom p {
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+
+.sidebar-bottom span {
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.main-content {
+
+    margin-left: 240px;
+
+    padding: 40px 5%;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.section {
+
+    padding: 20px 0 70px;
+
+    scroll-margin-top: 20px;
+
+}
+
+
+/* =====================================
+   PAGE HEADING
+===================================== */
+
+.page-heading {
+
+    margin-bottom: 30px;
+
+}
+
+
+.page-heading h1 {
+
+    color: #2196f3;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.page-heading p {
+
+    color: #aaa;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================
+   DASHBOARD STATISTICS
+===================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.stat-card {
+
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.stat-card h3 {
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+
+}
+
+
+.stat-card p {
+
+    color: #2196f3;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
+
+
+.stat-icon {
+
+    font-size: 24px;
+
+    color: #2196f3;
+
+}
+
+
+/* =====================================
+   DASHBOARD BOX
+===================================== */
+
+.dashboard-box {
+
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+}
+
+
+.dashboard-box h2 {
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.dashboard-box p {
+
+    color: #999;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.search-box {
+
+    margin-bottom: 20px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    background-color: #080808;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 6px;
+
+    outline: none;
+
+}
+
+
+.search-box input::placeholder {
+
+    color: #777;
+
+}
+
+
+.search-box input:focus {
+
+    border-color: #2196f3;
+
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+
+}
+
+
+th {
+
+    background-color: #111;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+}
+
+
+td {
+
+    padding: 14px;
+
+    border-top: 1px solid #222;
+
+    color: #ccc;
+
+    font-size: 13px;
+
+}
+
+
+tr:hover td {
+
+    background-color: #080808;
+
+}
+
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-container {
+
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.input-group label {
+
+    color: white;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.input-group input {
+
+    background-color: #000;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+}
+
+
+.input-group input:focus {
+
+    border-color: #2196f3;
+
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.button-group {
+
+    margin-top: 25px;
+
+}
+
+
+button {
+
+    background-color: #2196f3;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding: 11px 18px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+button:hover {
+
+    background-color: #1976d2;
+
+}
+
+
+.outline-button {
+
+    background-color: transparent;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    margin-left: 8px;
+
+}
+
+
+.outline-button:hover {
+
+    border-color: #2196f3;
+
+    color: #2196f3;
+
+}
+
+
+/* Table Action Buttons */
+
+.action-button {
+
+    padding: 7px 10px;
+
+    font-size: 11px;
+
+    margin: 2px;
+
+}
+
+
+.update-button {
+
+    background-color: transparent;
+
+    border: 1px solid #2196f3;
+
+    color: #2196f3;
+
+}
+
+
+.delete-button {
+
+    background-color: #222;
+
+    color: white;
+
+}
+
+
+.issue-button {
+
+    background-color: #2196f3;
+
+}
+
+
+.return-button {
+
+    background-color: transparent;
+
+    border: 1px solid #2196f3;
+
+    color: #2196f3;
+
+}
+
+
+/* =====================================
+   AVAILABLE BOOK CARDS
+===================================== */
+
+.available-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.book-card {
+
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 22px;
+
+}
+
+
+.book-card h3 {
+
+    color: white;
+
+    margin-bottom: 10px;
+
+}
+
+
+.book-card p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.available-badge {
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: #2196f3;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================
+   PRICING
+===================================== */
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.pricing-card {
+
+    position: relative;
+
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+.pricing-card h2 {
+
+    color: white;
+
+    margin-bottom: 18px;
+
+}
+
+
+.price {
+
+    color: #2196f3;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+}
+
+
+.price span {
+
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+}
+
+
+.pricing-card p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.pricing-card ul {
+
+    list-style: none;
+
+    text-align: left;
+
+    margin-bottom: 25px;
+
+}
+
+
+.pricing-card li {
+
+    color: #ccc;
+
+    font-size: 13px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #1c1c1c;
+
+}
+
+
+.pricing-card button {
+
+    width: 100%;
+
+}
+
+
+.featured {
+
+    border-color: #2196f3;
+
+}
+
+
+.popular {
+
+    position: absolute;
+
+    top: -12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: #2196f3;
+
+    color: white;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    border-top: 1px solid #222;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .available-grid,
+
+    .pricing-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid #222;
+
+    }
+
+
+    .sidebar nav {
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+    }
+
+
+    .sidebar-bottom {
+
+        display: none;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 25px 5%;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-heading h1 {
+
+        font-size: 25px;
+
+    }
+
+}

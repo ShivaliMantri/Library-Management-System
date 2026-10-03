@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            📚 Library
+
+        </div>
+
+
+        <nav>
+
+            <a href="#dashboard" class="active">
+                Dashboard
+            </a>
+
+            <a href="#allBooks">
+                All Books
+            </a>
+
+            <a href="#newBooks">
+                New Books
+            </a>
+
+            <a href="#availableBooks">
+                Available Books
+            </a>
+
+            <a href="#pricing">
+                Pricing
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <p>Library Portal</p>
+
+            <span>Management System</span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section id="dashboard" class="section">
+
+            <div class="page-heading">
+
+                <h1>Library Dashboard</h1>
+
+                <p>
+                    Manage your library books easily and efficiently.
+                </p>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <h3>Total Books</h3>
+
+                        <p id="totalBooks">0</p>
+
+                    </div>
+
+                    <span class="stat-icon">
+                        📚
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <h3>Available Books</h3>
+
+                        <p id="availableBooks">0</p>
+
+                    </div>
+
+                    <span class="stat-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <h3>Issued Books</h3>
+
+                        <p id="issuedBooks">0</p>
+
+                    </div>
+
+                    <span class="stat-icon">
+                        📖
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <h3>Book Titles</h3>
+
+                        <p id="bookTitles">0</p>
+
+                    </div>
+
+                    <span class="stat-icon">
+                        #
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard Information -->
+
+            <div class="dashboard-box">
+
+                <h2>Welcome to Library Management System</h2>
+
+                <p>
+                    Use the menu to add new books, view all books,
+                    check available books and manage your library.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ALL BOOKS
+        ========================== -->
+
+        <section id="allBooks" class="section">
+
+            <div class="page-heading">
+
+                <h1>All Books</h1>
+
+                <p>
+                    View, search and manage all books.
+                </p>
+
+            </div>
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by Book ID, Title or Author..."
+                    onkeyup="searchBooks()"
+                >
+
+            </div>
+
+
+            <!-- Book Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Book ID</th>
+
+                            <th>Book Title</th>
+
+                            <th>Author</th>
+
+                            <th>Quantity</th>
+
+                            <th>Available</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="bookTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEW BOOKS
+        ========================== -->
+
+        <section id="newBooks" class="section">
+
+            <div class="page-heading">
+
+                <h1>Add New Book</h1>
+
+                <p>
+                    Add a new book to the library collection.
+                </p>
+
+            </div>
+
+
+            <div class="form-container">
+
+                <form id="bookForm">
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Book ID -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Book ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bookId"
+                                placeholder="Example: B004"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Book Title -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Book Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bookTitle"
+                                placeholder="Enter book title"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Author -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Author
+                            </label>
+
+                            <input
+                                type="text"
+                                id="author"
+                                placeholder="Enter author name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Quantity -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                placeholder="Enter quantity"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="button-group">
+
+                        <button
+                            type="submit"
+                            id="submitButton">
+
+                            + Add Book
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="outline-button"
+                            onclick="clearForm()">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             AVAILABLE BOOKS
+        ========================== -->
+
+        <section id="availableBooks" class="section">
+
+            <div class="page-heading">
+
+                <h1>Available Books</h1>
+
+                <p>
+                    Books that are currently available for issue.
+                </p>
+
+            </div>
+
+
+            <div class="available-grid"
+                 id="availableBookCards">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRICING
+        ========================== -->
+
+        <section id="pricing" class="section">
+
+            <div class="page-heading">
+
+                <h1>Library Pricing</h1>
+
+                <p>
+                    Simple membership plans for library users.
+                </p>
+
+            </div>
+
+
+            <div class="pricing-grid">
+
+
+                <!-- Basic -->
+
+                <div class="pricing-card">
+
+                    <h2>Basic</h2>
+
+                    <div class="price">
+                        ₹199
+                        <span>/month</span>
+                    </div>
+
+                    <p>
+                        Suitable for regular readers.
+                    </p>
+
+                    <ul>
+
+                        <li>✓ 2 Books at a time</li>
+
+                        <li>✓ 15 Days borrowing</li>
+
+                        <li>✓ Book search</li>
+
+                        <li>✓ Online records</li>
+
+                    </ul>
+
+                    <button>
+                        Choose Plan
+                    </button>
+
+                </div>
+
+
+                <!-- Standard -->
+
+                <div class="pricing-card featured">
+
+                    <div class="popular">
+                        POPULAR
+                    </div>
+
+                    <h2>Standard</h2>
+
+                    <div class="price">
+                        ₹399
+                        <span>/month</span>
+                    </div>
+
+                    <p>
+                        Suitable for regular students.
+                    </p>
+
+                    <ul>
+
+                        <li>✓ 5 Books at a time</li>
+
+                        <li>✓ 30 Days borrowing</li>
+
+                        <li>✓ Book search</li>
+
+                        <li>✓ Priority access</li>
+
+                    </ul>
+
+                    <button>
+                        Choose Plan
+                    </button>
+
+                </div>
+
+
+                <!-- Premium -->
+
+                <div class="pricing-card">
+
+                    <h2>Premium</h2>
+
+                    <div class="price">
+                        ₹699
+                        <span>/month</span>
+                    </div>
+
+                    <p>
+                        Suitable for frequent readers.
+                    </p>
+
+                    <ul>
+
+                        <li>✓ 10 Books at a time</li>
+
+                        <li>✓ 60 Days borrowing</li>
+
+                        <li>✓ Priority access</li>
+
+                        <li>✓ Premium support</li>
+
+                    </ul>
+
+                    <button>
+                        Choose Plan
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            Library Management System © 2026
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
